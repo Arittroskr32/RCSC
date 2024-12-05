@@ -18,6 +18,9 @@
 
     .input-container {
       margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     input[type="text"], button {
@@ -33,6 +36,10 @@
       color: white;
       cursor: pointer;
     }
+    .line_text{
+      text-align: center;
+      font-weight: 600;
+    }
 
     button:hover {
       background-color: #0056b3;
@@ -41,6 +48,16 @@
     .result {
       margin-top: 20px;
       text-align: center;
+    }
+    .image{
+      width: 20%;
+      margin: auto;
+    }
+    .main_image{
+      width: 100%;
+    }
+    .aaa{
+      font-weight: 600;
     }
 
     video {
@@ -59,16 +76,27 @@
 </head>
 <body>
   <div class="long-text">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec tortor ac nulla ultrices luctus. 
-      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer nec massa at lectus suscipit vulputate. 
-      In hac habitasse platea dictumst. Sed fermentum, quam euismod varius vehicula, urna metus hendrerit ligula, id interdum arcu lectus vel magna.
+    <h2 class="line_text">Congratulations! You have successfully completed the first level.</h2>
+    <div class="image">
+      <img class="main_image" src="bb.jpg" alt="">
+    </div>
+    <p class="line_text">
+      Can you find out the day and date when the match was played?
+    </p>
+    <p class="line_text">
+      Password Format: Day_Date
+    </p>
+    <p class="line_text">
+      For example: Saturday_18
+    </p>
+    <p class="line_text">
+      Clue: India Today could be a useful source for cricket news
     </p>
   </div>
 
   <div class="input-container">
-    <label for="text-input">Enter a word:</label>
-    <input type="text" id="text-input" placeholder="Type something here..." />
+    <label for="text-input" class="aaa">Enter a word:</label>
+    <input type="text" id="text-input" placeholder="Enter Password Day_Date" />
     <button id="submit-button">Submit</button>
     <button id="refresh-button">Refresh</button>
   </div>
