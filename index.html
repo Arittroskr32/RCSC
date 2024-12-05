@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Text Input Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .long-text {
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"], button {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 600px) {
+      input[type="text"], button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="long-text">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec tortor ac nulla ultrices luctus. 
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer nec massa at lectus suscipit vulputate. 
+      In hac habitasse platea dictumst. Sed fermentum, quam euismod varius vehicula, urna metus hendrerit ligula, id interdum arcu lectus vel magna.
+    </p>
+  </div>
+
+  <div class="input-container">
+    <label for="text-input">Enter a word:</label>
+    <input type="text" id="text-input" placeholder="Type something here..." />
+    <button id="submit-button">Submit</button>
+    <button id="refresh-button">Refresh</button>
+  </div>
+
+  <div class="result" id="result-container"></div>
+
+  <script>
+    const inputField = document.getElementById('text-input');
+    const submitButton = document.getElementById('submit-button');
+    const refreshButton = document.getElementById('refresh-button');
+    const resultContainer = document.getElementById('result-container');
+
+    submitButton.addEventListener('click', () => {
+      const value = inputField.value.trim().toLowerCase();
+      resultContainer.innerHTML = '';
+
+      if (value === 'flag') {
+        window.location.href = 'https://example.com';
+      } else if (value !== '') {
+        const video = document.createElement('video');
+        video.src = 'murubbi.mp4'; 
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true; 
+        video.alt = 'Default Video';
+        resultContainer.appendChild(video);
+      }
+    });
+
+    refreshButton.addEventListener('click', () => {
+      location.reload();
+    });
+  </script>
+</body>
+</html>
