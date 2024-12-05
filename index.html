@@ -19,6 +19,7 @@
     .input-container {
       margin-bottom: 20px;
       display: flex;
+      flex-direction: column; /* Stacks elements vertically on mobile */
       align-items: center;
       justify-content: center;
     }
@@ -28,15 +29,18 @@
       font-size: 16px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      margin-right: 10px;
+      margin-bottom: 10px; /* Adjusts spacing for mobile */
     }
 
     button {
       background-color: #007bff;
       color: white;
       cursor: pointer;
+      width: 100%; /* Full width on mobile for better usability */
+      max-width: 300px; /* Limits button size on larger devices */
     }
-    .line_text{
+
+    .line_text {
       text-align: center;
       font-weight: 600;
     }
@@ -49,15 +53,19 @@
       margin-top: 20px;
       text-align: center;
     }
-    .image{
-      width: 20%;
+
+    .image {
+      width: 30%; /* Reduced size for smaller devices */
       margin: auto;
     }
-    .main_image{
+
+    .main_image {
       width: 100%;
     }
-    .aaa{
+
+    .aaa {
       font-weight: 600;
+      margin-bottom: 5px; /* Adjust spacing on mobile */
     }
 
     video {
@@ -68,8 +76,19 @@
     }
 
     @media (max-width: 600px) {
-      input[type="text"], button {
-        font-size: 14px;
+      .image {
+        width: 80%; /* Makes the image larger on small devices */
+        margin-bottom: 20px; /* Adds space below the image */
+      }
+
+      input[type="text"] {
+        width: 100%; /* Full-width text field for smaller screens */
+        max-width: 300px; /* Prevents overly stretched input fields */
+      }
+
+      .result video {
+        margin-top: 20px; /* Adds space above the video for better layout */
+        max-height: 300px; /* Restricts video height to fit smaller screens */
       }
     }
   </style>
@@ -78,7 +97,7 @@
   <div class="long-text">
     <h2 class="line_text">Congratulations! You have successfully completed the first level.</h2>
     <div class="image">
-      <img class="main_image" src="bb.jpg" alt="">
+      <img class="main_image" src="bb.jpg" alt="Level Image">
     </div>
     <p class="line_text">
       Can you find out the day and date when the match was played?
@@ -105,31 +124,31 @@
 
   <script>
     const inputField = document.getElementById('text-input');
-const submitButton = document.getElementById('submit-button');
-const refreshButton = document.getElementById('refresh-button');
-const resultContainer = document.getElementById('result-container');
+    const submitButton = document.getElementById('submit-button');
+    const refreshButton = document.getElementById('refresh-button');
+    const resultContainer = document.getElementById('result-container');
 
-submitButton.addEventListener('click', () => {
-  const value = inputField.value.trim(); // Ensure no leading/trailing spaces
-  resultContainer.innerHTML = ''; // Clear previous results
+    submitButton.addEventListener('click', () => {
+      const value = inputField.value.trim(); // Ensure no leading/trailing spaces
+      resultContainer.innerHTML = ''; // Clear previous results
 
-  // Case-sensitive check
-  if (value === 'Friday_14') {
-    window.location.href = 'https://docs.google.com/document/d/150_-j53iC9f9S6aiRuIzK-fh1J4E-GJhyfo2vQD53t4/edit?tab=t.0';
-  } else if (value !== '') {
-    const video = document.createElement('video');
-    video.src = 'murubbi.mp4'; 
-    video.controls = true;
-    video.autoplay = true;
-    video.loop = true; 
-    video.alt = 'Default Video';
-    resultContainer.appendChild(video);
-  }
-});
+      // Case-sensitive check
+      if (value === 'Friday_14') {
+        window.location.href = 'https://docs.google.com/document/d/150_-j53iC9f9S6aiRuIzK-fh1J4E-GJhyfo2vQD53t4/edit?tab=t.0';
+      } else if (value !== '') {
+        const video = document.createElement('video');
+        video.src = 'murubbi.mp4'; 
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true; 
+        video.alt = 'Default Video';
+        resultContainer.appendChild(video);
+      }
+    });
 
-refreshButton.addEventListener('click', () => {
-  location.reload();
-});
+    refreshButton.addEventListener('click', () => {
+      location.reload();
+    });
   </script>
 </body>
 </html>
