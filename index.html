@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCSC - Treasure Hunt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome to RCSC Treasure Hunt</h1>
+    <p>Enter your details to start your adventure!</p>
+
+    <form id="treasureForm">
+        <input type="text" id="username" placeholder="Enter your username: (arittro)" required>
+        <input type="text" id="roll" placeholder="Enter roll like: (2103003)" required>
+        <input type="text" id="dept" placeholder="Enter your department: ( ... )" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="result" id="result" style="display: none;">
+        <p id="resultText"></p>
+    </div>
+
+    <div id="answerSection">
+        <img src="aaa.jpg" alt="sadhin_image" style="max-width: 100%; height: auto;">
+        <h3>In tribute to the martyrs of Bangladesh's recent revolution, several fonts were released in their honor. Find the first font among these releases, identify the company that published it, and determine the official announcement date.</h3>
+        <h3>Can you find this answer because this is the password to unlock the next treasure. Password looks like this 'font_name_company_name_DD_MM_YYYY'. For an example 'times_new_roman_google_15_01_2010'</h3>
+        <p>Enter the Password:</p>
+        <input type="text" id="userAnswer" placeholder="Your Password here">
+        <button id="checkAnswer">Submit Password</button>
+        <div id="feedback"></div>
+    </div>
+
+    <div id="videoContainer">
+        <h3 id="videoMessage">If you do not see the video, then change your browser.</h3>
+        <video id="treasureVideo" controls>
+            <source src="./nokia_video.mp4" type="video/mp4">
+        </video>
+        <h3>Hurray! You have come to the end of this hunt. Your final clue is concealed within these numbers. Decipher them to conclude your quest. <span style="color: red;">flag[6]="22.777.2.444.66"</span></h3>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
